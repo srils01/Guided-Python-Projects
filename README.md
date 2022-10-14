@@ -10,8 +10,8 @@ Bikeshare
 I will work on the data related to bike share use in Chicago, New York City, and Washington by computing a variety of descriptive statistics. Using Python, I will write a code to answer the questions for the user about it. I will also write a script that takes in raw input to create an interactive experience in the terminal to present these statistics.
 
 ### Files used
-chicago.csv
-new_york_city.csv
+chicago.csv,
+new_york_city.csv,
 washington.csv
 
 
