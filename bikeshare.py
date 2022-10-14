@@ -62,8 +62,8 @@ def time_stats(dataframe_data):
     start_time_dataframe= dataframe_data["Start Time"]
     date_dataframe = pd.to_datetime(start_time_dataframe)
     month_dataframe = date_dataframe.dt.month
-    most_common_month= month_dataframe.mode()[0]
-    print("The most common month is", (most_common_month))
+    common_month= month_dataframe.mode()[0]
+    print("The most common month is", (common_month))
     day_dataframe = date_dataframe.dt.weekday
     most_common_day=day_dataframe.mode()[0]
     print("The most common day is",(most_common_day))
