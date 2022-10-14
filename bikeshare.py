@@ -51,15 +51,15 @@ def get_filters():
 def load_data(city, month, day):
     print("Loading data as per the user input")
     print(CITY_DATA[city])
-    data_to_analyze_dataframe=pd.read_csv(CITY_DATA[city])
-    return data_to_analyze_dataframe
+    dataframe_data=pd.read_csv(CITY_DATA[city])
+    return dataframe_data
 
 
-def time_stats(data_to_analyze_dataframe):
+def time_stats(dataframe_data):
     """Displays statistics on the most frequent times of travel."""
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-    start_time_dataframe= data_to_analyze_dataframe["Start Time"]
+    start_time_dataframe= dataframe_data["Start Time"]
     date_dataframe = pd.to_datetime(start_time_dataframe)
     month_dataframe = date_dataframe.dt.month
     most_common_month= month_dataframe.mode()[0]
@@ -73,15 +73,15 @@ def time_stats(data_to_analyze_dataframe):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-def station_stats(data_to_analyze_dataframe):
+def station_stats(dataframe_data):
     """Displays statistics on the most popular stations and trip."""
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
-    start_station_dataframe= data_to_analyze_dataframe["Start Station"]
+    start_station_dataframe= dataframe_data["Start Station"]
     most_popular_start_station=start_station_dataframe.mode()[0]
     print("The most popular start station is",(most_popular_start_station))
-    end_station_dataframe= data_to_analyze_dataframe["End Station"]
+    end_station_dataframe= dataframe_data["End Station"]
     most_popular_end_station=end_station_dataframe.mode()[0]
     print("The most popular end station is",(most_popular_end_station))
     combination=start_station_dataframe+end_station_dataframe
@@ -91,35 +91,35 @@ def station_stats(data_to_analyze_dataframe):
     print('-'*40)
 
 
-def trip_duration_stats(data_to_analyze_dataframe):
+def trip_duration_stats(dataframe_data):
     """Displays statistics on the total and average trip duration."""
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
-    travel_time_dateframe=data_to_analyze_dataframe["Trip Duration"].sum()
+    travel_time_dateframe=dataframe_data["Trip Duration"].sum()
     print("The total travel time is ", travel_time_dateframe)
-    mean_travel_time_dateframe=data_to_analyze_dataframe["Trip Duration"].mean()
+    mean_travel_time_dateframe=dataframe_data["Trip Duration"].mean()
     print("The mean travel time is ",mean_travel_time_dateframe)
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
-def user_stats(data_to_analyze_dataframe):
+def user_stats(dataframe_data):
     """Displays statistics on bikeshare users."""
 
     print('\nCalculating User Stats...\n')
     start_time = time.time()
-    user_type_dataframe=data_to_analyze_dataframe["User Type"]
+    user_type_dataframe=dataframe_data["User Type"]
     count_user_type=user_type_dataframe.value_counts()
     print("The count of user types is", (count_user_type))
-    if "Gender" in data_to_analyze_dataframe:
-        gender_dataframe=data_to_analyze_dataframe["Gender"]
+    if "Gender" in dataframe_data:
+        gender_dataframe=dataframe_data["Gender"]
         count_of_gender=gender_dataframe.value_counts()
         print("The count of gender is", (count_of_gender))
     else:
         print("Gender stats cannot be calculated because Gender does not appear in the dataframe")
-    if "Birth Year" in data_to_analyze_dataframe:
-        year_dataframe=data_to_analyze_dataframe["Birth Year"]
+    if "Birth Year" in dataframe_data:
+        year_dataframe=dataframe_data["Birth Year"]
         earliest_year=year_dataframe.min()
         print("The earliest year of birth is", (earliest_year))
         most_recent_year=year_dataframe.max()
@@ -138,11 +138,11 @@ def main():
         print("City value returned is --- ",city)
         print("Month value returned is --- ",month)
         print("Day value returned is --- ",day)
-        data_to_analyze_dataframe= load_data(city, month, day)
-        time_stats(data_to_analyze_dataframe)
-        station_stats(data_to_analyze_dataframe)
-        trip_duration_stats(data_to_analyze_dataframe)
-        user_stats(data_to_analyze_dataframe)
+        dataframe_data= load_data(city, month, day)
+        time_stats(dataframe_data)
+        station_stats(dataframe_data)
+        trip_duration_stats(dataframe_data)
+        user_stats(dataframe_data)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
