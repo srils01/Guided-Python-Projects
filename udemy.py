@@ -35,21 +35,22 @@
 #print("each person should pay" +" " + str(total_pay))
 
 
-#Coding exercise 5- BMI calculator
+# #Coding exercise 5- BMI calculator
 
-x=float(input("weight"))
-y=float(input("heaight"))
-z=float(x/y**2)
-if z<18.5:
-    print("You are underweight")
-elif z<25 and z<30:
-    print("You are in normal weight")
-elif z<40:
-    print("Your are overweight")
-elif z<35:
-    print("You are obese")
-else:
-    print("You are clinically obese")
+# x=float(input("weight"))
+# y=float(input("heaight"))
+# z=float(x/y**2)
+# if z<18.5:
+#     print("You are underweight")
+# elif z<25 and z<30:
+#     print("You are in normal weight")
+# elif z<40:
+#     print("Your are overweight")
+# elif z<35:
+#     print("You are obese")
+# else:
+#     print("You are clinically obese")
+
 
 
 
