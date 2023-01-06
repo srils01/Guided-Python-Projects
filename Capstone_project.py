@@ -256,8 +256,8 @@ def coffee_choice():
                             user_input= input("What would you like to have ?(espresso/latte/cappuccino)").lower()
             elif user_input=="report":
                 print(resources)
-                break     
-
+                user_input= input("What would you like to have ?(espresso/latte/cappuccino)").lower()
 coffee_choice()
+
 
 
