@@ -160,7 +160,7 @@ def coffee_choice():
                     break
                 elif MENU["latte"]["ingredients"]["coffee"]>resources["coffee"]:
                     print("Sorry, there is not enough coffee") 
-                    break             
+                    break          
                 else:
                     ask_user="Insert coins"
                     print(ask_user)
