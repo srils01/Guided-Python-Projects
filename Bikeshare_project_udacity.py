@@ -69,7 +69,7 @@ def time_stats(dataframe_data):
     print("The most common day is",(most_common_day))
     hour_dataframe=date_dataframe.dt.hour
     most_common_hour=hour_dataframe.mode()[0]
-    print("The most common hour is",(hour_dataframe))
+    print("The most common hour is",(most_common_hour))
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
