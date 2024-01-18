@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 db_config = {
     'host': '127.0.0.1',
     'user': 'root',
-    'password': 'Omganesha123!',
+    'password': 'XYZ',
     'database': 'sample',
 }
 
