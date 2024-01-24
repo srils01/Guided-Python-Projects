@@ -46,18 +46,18 @@ fig.show()
 
 # Cleaning the data further
 
-# df_apps_clean2.Installs = df_apps_clean2.Installs.astype(str).str.replace(',', "")
-# df_apps_clean2.Installs = pd.to_numeric(df_apps_clean2.Installs)
-# df_install=df_apps_clean2.pivot_table(index='Installs',values='App',aggfunc='count')
-# print(df_install)
-# df_apps_clean2.Price = df_apps_clean2.Price.astype(str).str.replace('$', "")
-# df_apps_clean2.Price = pd.to_numeric(df_apps_clean2.Price)
-# print(df_apps_clean2.sort_values('Price', ascending=False).head(20))
-# df_apps_clean = df_apps_clean2[df_apps_clean2.Price] < 250
-# df_apps_clean.sort_values('Price', ascending=False).head(5)
-# top10_category=df_apps_clean2.pivot_table(index='Category',values='App',aggfunc='count')
-# print(top10_category.shape)
-# print(top_10_category.sort_values('App', ascending=True))
+df_apps_clean2.Installs = df_apps_clean2.Installs.astype(str).str.replace(',', "")
+df_apps_clean2.Installs = pd.to_numeric(df_apps_clean2.Installs)
+df_install=df_apps_clean2.pivot_table(index='Installs',values='App',aggfunc='count')
+print(df_install)
+df_apps_clean2.Price = df_apps_clean2.Price.astype(str).str.replace('$', "")
+df_apps_clean2.Price = pd.to_numeric(df_apps_clean2.Price)
+print(df_apps_clean2.sort_values('Price', ascending=False).head(20))
+df_apps_clean = df_apps_clean2[df_apps_clean2.Price] < 250
+df_apps_clean.sort_values('Price', ascending=False).head(5)
+top10_category=df_apps_clean2.pivot_table(index='Category',values='App',aggfunc='count')
+print(top10_category.shape)
+print(top_10_category.sort_values('App', ascending=True))
 
 # Analyzing the category of apps dominating the market
 top_10_category = df_apps_clean2.Category.value_counts()
